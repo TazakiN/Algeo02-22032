@@ -1,106 +1,94 @@
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fexamples%2Ftree%2Fmain%2Fpython%2Fdjango&demo-title=Django%20%2B%20Vercel&demo-description=Use%20Django%204%20on%20Vercel%20with%20Serverless%20Functions%20using%20the%20Python%20Runtime.&demo-url=https%3A%2F%2Fdjango-template.vercel.app%2F&demo-image=https://assets.vercel.com/image/upload/v1669994241/random/django.png)
+# Content-Based Image Retrieval
 
-# Django + Vercel
+> Sebuah website yang menyediakan fitur pencarian gambar berdasarkan konten gambar.
+> Live demo [_here_](https://django-hello-world-wheat-mu.vercel.app/). <!-- If you have the project hosted somewhere, include the link here. -->
 
-This example shows how to use Django 4 on Vercel with Serverless Functions using the [Python Runtime](https://vercel.com/docs/concepts/functions/serverless-functions/runtimes/python).
+## Table of Contents
 
-## Demo
+- [General Info](#general-information)
+- [Technologies Used](#technologies-used)
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [Setup](#setup)
+- [Usage](#usage)
+- [Project Status](#project-status)
+- [Room for Improvement](#room-for-improvement)
+- [Acknowledgements](#acknowledgements)
+- [Contact](#contact)
+<!-- * [License](#license) -->
 
-https://django-template.vercel.app/
+## General Information
 
-## How it Works
+- Provide general information about your project here.
+- What problem does it (intend to) solve?
+- What is the purpose of your project?
+- Why did you undertake it?
+<!-- You don't have to answer all the questions - just the ones relevant to your project. -->
 
-Our Django application, `example` is configured as an installed application in `vercel_app/settings.py`:
+## Technologies Used
 
-```python
-# vercel_app/settings.py
-INSTALLED_APPS = [
-    # ...
-    'example',
-]
-```
+- Python - version 3.12
+- Django - version 4.2.6
 
-We allow "\*.vercel.app" subdomains in `ALLOWED_HOSTS`, in addition to 127.0.0.1:
+## Features
 
-```python
-# vercel_app/settings.py
-ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
-```
+List the ready features here:
 
-The `wsgi` module must use a public variable named `app` to expose the WSGI application:
+- Awesome feature 1
+- Awesome feature 2
+- Awesome feature 3
 
-```python
-# vercel_app/wsgi.py
-app = get_wsgi_application()
-```
+## Screenshots
 
-The corresponding `WSGI_APPLICATION` setting is configured to use the `app` variable from the `vercel_app.wsgi` module:
+![Example screenshot](./img/screenshot.png)
 
-```python
-# vercel_app/settings.py
-WSGI_APPLICATION = 'vercel_app.wsgi.app'
-```
+<!-- If you have screenshots you'd like to share, include them here. -->
 
-There is a single view which renders the current time in `example/views.py`:
+## Setup
 
-```python
-# example/views.py
-from datetime import datetime
+What are the project requirements/dependencies? Where are they listed? A requirements.txt or a Pipfile.lock file perhaps? Where is it located?
 
-from django.http import HttpResponse
+Proceed to describe how to install / setup one's local environment / get started with the project.
 
+## Usage
 
-def index(request):
-    now = datetime.now()
-    html = f'''
-    <html>
-        <body>
-            <h1>Hello from Vercel!</h1>
-            <p>The current time is { now }.</p>
-        </body>
-    </html>
-    '''
-    return HttpResponse(html)
-```
+How does one go about using it?
+Provide various use cases and code examples here.
 
-This view is exposed a URL through `example/urls.py`:
+`write-your-code-here`
 
-```python
-# example/urls.py
-from django.urls import path
+## Project Status
 
-from example.views import index
+Project is: _in progress_ / _complete_
 
+## Room for Improvement
 
-urlpatterns = [
-    path('', index),
-]
-```
+Include areas you believe need improvement / could be improved. Also add TODOs for future development.
 
-Finally, it's made accessible to the Django server inside `vercel_app/urls.py`:
+Room for improvement:
 
-```python
-# vercel_app/urls.py
-from django.urls import path, include
+- Improvement to be done 1
+- Improvement to be done 2
 
-urlpatterns = [
-    ...
-    path('', include('example.urls')),
-]
-```
+To do:
 
-This example uses the Web Server Gateway Interface (WSGI) with Django to enable handling requests on Vercel with Serverless Functions.
+- Feature to be added 1
+- Feature to be added 2
 
-## Running Locally
+## Acknowledgements
 
-```bash
-python manage.py runserver
-```
+Give credit here.
 
-Your Django application is now available at `http://localhost:8000`.
+- This project was inspired by...
+- This project was based on [this tutorial](https://www.example.com).
+- Many thanks to...
 
-## One-Click Deploy
+## Contact
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=vercel-examples):
+Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me!
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fexamples%2Ftree%2Fmain%2Fpython%2Fdjango&demo-title=Django%20%2B%20Vercel&demo-description=Use%20Django%204%20on%20Vercel%20with%20Serverless%20Functions%20using%20the%20Python%20Runtime.&demo-url=https%3A%2F%2Fdjango-template.vercel.app%2F&demo-image=https://assets.vercel.com/image/upload/v1669994241/random/django.png)
+<!-- Optional -->
+<!-- ## License -->
+<!-- This project is open source and available under the [... License](). -->
+
+<!-- You don't have to include all sections - just the one's relevant to your project -->
