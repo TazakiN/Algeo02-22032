@@ -1,7 +1,7 @@
 # Content-Based Image Retrieval
 
-> Sebuah website yang menyediakan fitur pencarian gambar berdasarkan konten gambar.
-> Live demo [_here_](https://django-hello-world-wheat-mu.vercel.app/). <!-- If you have the project hosted somewhere, include the link here. -->
+> Sebuah website yang menyediakan fitur pencarian gambar berdasarkan konten gambar.  
+> Live demo [_di sini_](https://django-hello-world-wheat-mu.vercel.app/). <!-- If you have the project hosted somewhere, include the link here. -->
 
 ## Table of Contents
 
@@ -32,11 +32,8 @@
 
 ## Features
 
-List the ready features here:
-
-- Awesome feature 1
-- Awesome feature 2
-- Awesome feature 3
+- Pencarian Gambar berdasarkan warna
+- Pencarian Gambar berdasarkan tekstur
 
 ## Screenshots
 
@@ -85,7 +82,11 @@ Give credit here.
 
 ## Contact
 
-Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me!
+Created by dizkon
+
+- 13522032 [@Tazkia Nizami](https://github.com/TazakiN)
+- 13522040 [@Dhidit Abdi Aziz](https://github.com/dhiabziz)
+- 13522049 [@Vanson Kurnialim](https://github.com/VansonK)
 
 <!-- Optional -->
 <!-- ## License -->
