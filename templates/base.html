@@ -1,0 +1,55 @@
+<DOCTYPE html>
+  {% load static %}
+  <html>
+    <head>
+      <title>Hello from Vercel!</title>
+
+      <!-- tag meta -->
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width" />
+
+      <!-- Bootstrap CSS -->
+      <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      />
+      <!-- Font awesome -->
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      />
+      <!-- DROP ZONE js dan css -->
+      <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+      <link
+        rel="stylesheet"
+        href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css"
+        type="text/css"
+      />
+
+      <!-- custom css & js -->
+      <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+      <script src="{% static 'main.js' %}"></script>
+    </head>
+    <body class="bg">
+      <div>
+        <h1 class="title">Content-Based Image Retrieval</h1>
+      </div>
+      <div class="main-container">
+        <div class="image-container">
+          {% block image-drop-zone %}{% endblock image-drop-zone %}
+        </div>
+        <div class="control-container">
+          {% block cbir-switch %} {% endblock cbir-switch %} {% block process %}
+          {% endblock process %}
+        </div>
+      </div>
+      <br />
+      <div class="result-container">
+        <div class="result-title">Result:</div>
+        <div class="result-image-container">
+          {% block result-image %}{% endblock result-image %}
+        </div>
+      </div>
+    </body>
+  </html>
+</DOCTYPE>

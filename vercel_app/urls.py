@@ -15,8 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings  # new
+from django.conf.urls.static import static  # new
+from example.views import MainView
+from example import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('example.urls')),
+    path("admin/", admin.site.urls),
+    path("", MainView.as_view(), name="main-view"),
+    path("upload/", views.upload, name="upload"),
+    path("methodCBIR/", views.methodCBIR, name="methodCBIR"),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
