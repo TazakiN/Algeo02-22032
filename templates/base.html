@@ -2,7 +2,16 @@
   {% load static %}
   <html>
     <head>
-      <title>Hello from Vercel!</title>
+      <title>dizkon: CBIR</title>
+      <!-- language -->
+      <meta http-equiv="Content-Language" content="en" />
+
+      <link
+        rel="shortcut icon"
+        type="image/png"
+        href="{% static 'images/favicon.ico' %}"
+      />
+      <link rel="icon" href="{% static 'images/favicon.ico' %}" />
 
       <!-- tag meta -->
       <meta charset="utf-8" />
@@ -21,6 +30,9 @@
         type="text/css"
       />
 
+      <!-- jQuery-->
+      <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
       <!-- custom css & js -->
       <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
       <script src="{% static 'main.js' %}"></script>
@@ -38,13 +50,19 @@
           {% endblock process %}
         </div>
       </div>
-      <br />
-      <div class="result-container">
-        <div class="result-title">Result:</div>
-        <div class="result-image-container">
-          {% block result-image %}{% endblock result-image %}
+      <div class="upload-dataset">
+        <div class="upload-title">Upload Dataset</div>
+        <div class="upload-container">
+          {% block upload-dataset %}{% endblock upload-dataset %}
         </div>
       </div>
+      <div class="result-container">
+        <div class="result-title">Result :</div>
+        <div class="result-image-container">
+          {% block result-image %} {% endblock result-image %}
+        </div>
+      </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </body>
   </html>
 </DOCTYPE>
