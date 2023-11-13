@@ -63,19 +63,6 @@ def uploadDataset(request):
     return JsonResponse({"message": "Gagal mengunggah dataset"})
 
 
-def get_dataset_images():
-    dataset_path = "media/dataset"
-    if os.path.exists(dataset_path):
-        images = [
-            f
-            for f in os.listdir(dataset_path)
-            if f.endswith(".jpg") or f.endswith(".png")
-        ]
-        return images
-    else:
-        return []
-
-
 @csrf_exempt
 def process_button(request):
     if request.method == "POST":
