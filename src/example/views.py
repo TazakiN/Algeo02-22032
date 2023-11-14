@@ -21,6 +21,14 @@ class MainView(TemplateView):
     template_name = "example/main.html"
 
 
+def aboutUs(request):
+    return render(request, "example/about-us.html")
+
+
+def explanation(request):
+    return render(request, "example/explanation.html")
+
+
 def upload(request):
     if request.method == "POST":
         image = request.FILES.get("file")

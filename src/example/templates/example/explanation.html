@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CBIR Explanation</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Explanation of CBIR" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'explanation.css' %}"
+    />
+  </head>
+  <body class="bg">
+    <div class="title-container">
+      <h1 class="page-title">CBIR Explanation</h1>
+    </div>
+
+    <div class="back-button">
+      <a href="#" onclick="history.back();">&#8592; Back</a>
+    </div>
+
+    <div class="explanation-container">
+      <div class="explanation-text">
+        <h2>Apa itu Content-Based Image Retrieval (CBIR)?</h2>
+        <p>
+          Content-Based Image Retrieval (CBIR) adalah cara untuk mengambil
+          gambar dari sebuah basis data. Dalam CBIR, pengguna menentukan gambar
+          kueri dan mendapatkan gambar-gambar di basis data yang mirip dengan
+          gambar kueri. Untuk menemukan gambar-gambar yang paling mirip, CBIR
+          membandingkan konten dari gambar masukan dengan gambar-gambar di basis
+          data. Lebih spesifik, CBIR membandingkan fitur visual seperti bentuk,
+          warna, tekstur, dan informasi spasial dan mengukur kemiripan antara
+          gambar kueri dengan gambar-gambar di basis data dengan mengacu pada
+          fitur-fitur tersebut.
+        </p>
+      </div>
+      <img
+        src="https://www.baeldung.com/wp-content/uploads/sites/4/2022/09/CBIR-2.png"
+        alt="CBIR Image"
+      />
+      <p>
+        sumber:
+        <a href="https://www.baeldung.com/cs/content-based-image-retrieval"
+          >https://www.baeldung.com/cs/content-based-image-retrieval</a
+        >
+      </p>
+    </div>
+
+    <div class="explanation-container">
+      <div class="explanation-text">
+        <h2>Fitur Ekstraksi</h2>
+        <p>
+          Fitur ekstraksi adalah proses untuk menghasilkan vektor numerik yang
+          menggambarkan aspek visual dari gambar. Ada dua kategori utama fitur
+          visual: global dan lokal. Fitur global adalah fitur yang menggambarkan
+          seluruh gambar, seperti histogram warna, momen warna, dan sebagainya.
+          Fitur lokal adalah fitur yang menggambarkan bagian-bagian tertentu
+          dari gambar, seperti sudut, tepi, dan titik kunci. Fitur lokal lebih
+          tahan terhadap perubahan skala dan rotasi.
+        </p>
+      </div>
+    </div>
+
+    <div class="explanation-container">
+      <div class="explanation-text">
+        <h2>Ekstraksi Fitur Warna</h2>
+        <p>
+          Fitur warna diekstraksi menggunakan metode Color Histogram. Histogram
+          Warna adalah grafik yang menunjukkan frekuensi kemunculan setiap nilai
+          gradiasi warna1. Histogram warna sangat efektif mengkarakterisasikan
+          distribusi global dari warna dalam sebuah citra digital. Dalam
+          penerapan CBIR untuk fitur warna digunakan metode Color retrieval
+          untuk pencarian gambar berdasarkan fitur warnanya yang dilakukan
+          berdasarkan nilai hue.
+        </p>
+      </div>
+    </div>
+
+    <div class="explanation-container">
+      <div class="explanation-text">
+        <h2>Ekstraksi Fitur Tekstur</h2>
+        <p>
+          Fitur tekstur diekstraksi menggunakan metode Grey-Level Co-occurrence
+          Matrix (GLCM). GLCM adalah metode statistik yang mempertimbangkan
+          hubungan antara dua piksel pada jarak dan orientasi tertentu. Tekstur
+          merupakan keterangan tingkat rendah yang sangat baik untuk aplikasi
+          pencarian dan pengambilan gambar.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

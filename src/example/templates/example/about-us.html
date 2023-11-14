@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>About dizkon</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="About dizkon" />
+    <link rel="stylesheet" type="text/css" href="{% static 'about.css' %}" />
+  </head>
+  <body class="bg">
+    <div class="title-container">
+      <h1 class="page-title">dizkon</h1>
+    </div>
+    <div class="back-button">
+      <a href="#" onclick="history.back();">&#8592; Back</a>
+    </div>
+    <div class="person-container">
+      <img
+        src="{% static '/staticImages/tazkia.jpg' %}"
+        alt="Tazkia Nizami"
+        class="person-image"
+      />
+      <div class="person-info">
+        <h2>Tazkia Nizami</h2>
+        <p>Deskripsi singkat tentang Tazkia Nizami.</p>
+      </div>
+    </div>
+
+    <div class="person-container">
+      <img
+        src="{% static '/staticImages/dhidit.jpg' %}"
+        alt="Dhidit Abdi Aziz"
+        class="person-image"
+      />
+      <div class="person-info">
+        <h2>Dhidit Abdi Aziz</h2>
+        <p>Deskripsi singkat tentang Dhidit Abdi Aziz.</p>
+      </div>
+    </div>
+
+    <div class="person-container">
+      <img
+        src="{% static '/staticImages/vanson.jpg' %}"
+        alt="Vanson Kurnialim"
+        class="person-image"
+      />
+      <div class="person-info">
+        <h2>Vanson Kurnialim</h2>
+        <p>Deskripsi singkat tentang Vanson Kurnialim.</p>
+      </div>
+    </div>
+  </body>
+</html>

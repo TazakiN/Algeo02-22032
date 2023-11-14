@@ -27,6 +27,8 @@ urlpatterns = [
     path("methodCBIR/", views.methodCBIR, name="methodCBIR"),
     path("upload-dataset/", views.uploadDataset, name="upload-dataset"),
     path("update_result/", views.update_result, name="update_result"),
+    path("about-us/", views.aboutUs, name="about-us"),
+    path("explanation/", views.explanation, name="explanation"),
 ]
 
 if settings.DEBUG:

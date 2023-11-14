@@ -365,3 +365,22 @@ input:checked + .slider:before {
 #previous-button:active {
   transform: scale(0.95);
 }
+
+.subtitle {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.subtitle a::before {
+  content: "\00a0"; /* Menambahkan karakter spasi (non-breaking space) sebelum teks */
+}
+
+.subtitle a {
+  text-decoration: none;
+  color: #845ec2;
+}
