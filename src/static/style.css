@@ -2,6 +2,7 @@ html,
 body {
   margin-top: 0;
   padding: 0;
+  size: max-content;
 }
 
 .bg {
@@ -96,9 +97,9 @@ body {
   border: dashed !important;
   border-color: #ccc;
   border-radius: 10px;
-  width: 100%; /* Menentukan lebar zona dropzone */
-  background: transparent; /* Membuat zona dropzone tembus pandang */
-  color: white; /* Mengatur warna teks */
+  width: 100%;
+  background: transparent;
+  color: white;
 }
 
 .dz:hover {
@@ -107,8 +108,8 @@ body {
 
 #my-awesome-dropzone {
   position: relative;
-  width: 200px; /* Sesuaikan dengan lebar imagePreview */
-  height: 200px; /* Sesuaikan dengan tinggi imagePreview */
+  width: 200px;
+  height: 200px;
 }
 
 #imagePreview {
@@ -397,6 +398,5 @@ input:checked + .slider:before {
 
 .subtitle a {
   text-decoration: none;
-  color: #00c2a8;
-  border-bottom: 1px solid white;
+  color: #ffc75f;
 }
