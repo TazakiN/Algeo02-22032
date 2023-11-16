@@ -38,9 +38,11 @@ def explanation(request):
 def upload(request):
     global imageDataTexture
     global imageDataColor
+    global time_taken
 
     if request.method == "POST":
         image = request.FILES.get("file")
+        time_taken = 0
         if image:
             # Gunakan FileSystemStorage untuk menyimpan file secara otomatis
             fs = FileSystemStorage(location=os.path.join(settings.MEDIA_ROOT, "images"))

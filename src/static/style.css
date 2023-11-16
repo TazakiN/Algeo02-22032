@@ -48,8 +48,18 @@ body {
   justify-content: center;
   align-items: center;
   width: 50%;
-  margin-right: 15px;
   position: relative;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-container img {
+  max-width: 100%;
+  border-radius: 6px;
 }
 
 .image-container:hover img {
@@ -62,10 +72,11 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
-  font-size: 20px;
+  color: #ccc;
+  font-size: 1em;
   text-align: center;
   width: 100%;
+  margin-top: 4px;
 }
 
 .image-container:hover .image-similarity {
@@ -90,8 +101,19 @@ body {
   border: #2195a3;
 }
 
+#result-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#result-image > div {
+  margin: 5px;
+}
+
 .result-title {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: "Times New Roman", Times, serif;
   font-size: 30px;
   color: white;
   text-align: left;
@@ -134,8 +156,8 @@ body {
 }
 
 #imagePreview {
-  font-family: "Courier New", Courier, monospace;
-  font-size: 15px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 0.9em;
   color: white;
   text-align: center;
 }
@@ -255,16 +277,7 @@ input:checked + .slider:before {
 }
 
 .image-container {
-  width: calc(50% - 10px);
-  margin-right: 20px;
-  margin-bottom: 20px;
-  box-sizing: border-box;
-  text-align: center;
-  display: inline-block;
-}
-
-.image-container {
-  width: calc(50% - 10px);
+  width: calc(30% - 10px);
   margin-right: 20px;
   margin-bottom: 20px;
   box-sizing: border-box;
@@ -282,7 +295,7 @@ input:checked + .slider:before {
 }
 
 .image-container img {
-  max-width: 500px;
+  max-width: 350px;
   width: 100%;
   height: auto;
   margin-bottom: 10px;
@@ -292,6 +305,8 @@ input:checked + .slider:before {
 .image-container .image-name {
   font-family: "Times New Roman", Times, serif;
   font-size: 20px;
+  font-weight: bold;
+  margin-top: 8px;
   max-width: 100%;
   color: #ffffff;
   word-wrap: break-word;
