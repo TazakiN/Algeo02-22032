@@ -1,10 +1,10 @@
-from PIL import Image as Gambar
+from PIL import Image
 import numpy as np
 import time
 
 
 def ImagetoRGB(path):  # input merupakan alamat atau path dari image
-    image = Gambar.open(path)
+    image = Image.open(path)
     image_array = image.convert("RGB")
     image_array = np.array(image_array)
     return image_array
@@ -49,11 +49,16 @@ def normalize(data):  # input merupakan simetri
 
 
 def contrast(data):  # input merupakan matriks symmetric
-    kontras = 0
-    for i in range(len(data)):
-        for j in range(len(data[0])):
-            kontras += data[i][j] * pow(i - j, 2)
+    array_index = np.arange(data.shape[0])
+    m_square = np.square(array_index[:, None] - array_index)
+
+    kontras = np.sum(m_square * data)
     return kontras
+    # kontras = 0
+    # for i in range(len(data)) :
+    #     for j in range(len(data[0])) :
+    #         kontras += data[i][j] * pow(i - j, 2)
+    # return kontras
 
 
 def homogeneity(data):  # input merupakan matriks symmetric
@@ -96,7 +101,7 @@ def normVektor(vektor):
 
 def getData(path):  # return vektor
     # ngambil RGB
-    image = Gambar.open(path)
+    image = Image.open(path)
     image_array = image.convert("RGB")
     image_array = np.array(image_array)
 
@@ -107,16 +112,24 @@ def getData(path):  # return vektor
     data = symmetric(data)
     data = normalize(data)
 
-    kontras = 0
-    homo = 0
-    entro = 0
-    for i in range(len(data)):
-        for j in range(len(data[0])):
-            kontras += data[i][j] * pow(i - j, 2)
-            homo += data[i][j] / (1 + pow(i - j, 2))
-            if data[i][j] != 0:
-                entro += data[i][j] * np.log10(data[i][j])
-    vektor = [kontras, homo, entro]
+    array_index = np.arange(data.shape[0])
+    m_square = np.square(array_index[:, None] - array_index)
+
+    kontras = np.sum(data * m_square)
+    homo = np.sum(data / (m_square + 1))
+    entro = np.sum(np.where(data > 0, data * np.log10(data + 1e-10), 0))
+
+    # kontras = contrast(data)
+    # homo = homogeneity(data)
+    # entro = entropy(data)
+    # for i in range(len(data)) :
+    #     for j in range(len(data[0])) :
+    #         kontras += data[i][j] * pow(i - j, 2)
+    #         homo += data[i][j] / (1 + pow(i - j, 2))
+    #         if (data[i][j] != 0) :
+    #             entro += data[i][j] * np.log10(data[i][j])
+
+    vektor = [kontras, homo, -entro]
     return vektor
 
 
@@ -126,7 +139,7 @@ def getData(path):  # return vektor
 # similarity = cosine(kucingpaw, kucingchill)
 # end = time.time()
 
-# print("kontras:", kucingpaw[0], "Homo:", kucingpaw[1], "entro:", kucingpaw[2])
-# print("kontras:", kucingchill[0], "Homo:", kucingchill[1], "entro:", kucingchill[2])
+# print("kontras:" , kucingpaw[0] , "Homo:", kucingpaw[1], "entro:" , kucingpaw[2])
+# print("kontras:" , kucingchill[0] , "Homo:", kucingchill[1], "entro:" , kucingchill[2])
 # print(similarity, "%")
-# print("time:", end - start)
+# print("time:", (end - start) * 1000 , "ms")
