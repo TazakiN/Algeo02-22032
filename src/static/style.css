@@ -49,6 +49,27 @@ body {
   align-items: center;
   width: 50%;
   margin-right: 15px;
+  position: relative;
+}
+
+.image-container:hover img {
+  opacity: 0.5;
+}
+
+.image-similarity {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.image-container:hover .image-similarity {
+  display: block;
 }
 
 .control-container {

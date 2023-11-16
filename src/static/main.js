@@ -133,7 +133,9 @@ function updateImages() {
             item.image_name +
             '" /> <div class="image-name">' +
             item.image_name +
-            "</div> </div>";
+            '</div> <div class="image-similarity">' +
+            item.similarity.toFixed(10) +
+            "% similarity</div> </div>";
         });
 
         $("#result-image").html(html);
@@ -171,6 +173,15 @@ function updateImages() {
           page++;
           updateImages();
         });
+
+        // Tampilkan jumlah gambar yang ditemukan dan waktu proses CBIR
+        $(".result-title").html(
+          "Result: " +
+            data.num_images +
+            " images found in " +
+            data.time_taken.toFixed(5) +
+            " seconds"
+        );
       } else {
         alert("Gagal memproses permintaan.");
       }
