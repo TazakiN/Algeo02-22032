@@ -29,11 +29,17 @@
 
 - Python - version 3.12
 - Django - version 4.2.6
+- asgiref - version 3.7.2
+- numpy - version 1.26.2
+- Pillow - version 10.1.0
+- sqlparse - version 0.4.4
+- tzdata - version 2023.3
+- whitenoise - version 6.6.0
 
 ## Features
 
-- Pencarian Gambar berdasarkan warna
-- Pencarian Gambar berdasarkan tekstur
+- Pencarian Gambar (CBIR) berdasarkan warna
+- Pencarian Gambar (CBIR) berdasarkan tekstur
 
 ## Screenshots
 
@@ -56,29 +62,25 @@ Provide various use cases and code examples here.
 
 ## Project Status
 
-Project is: _in progress_ / _complete_
+Project is: _in progress_
 
 ## Room for Improvement
 
-Include areas you believe need improvement / could be improved. Also add TODOs for future development.
-
 Room for improvement:
 
-- Improvement to be done 1
-- Improvement to be done 2
+- Frontend design
+- bugs in the backend
 
 To do:
 
-- Feature to be added 1
-- Feature to be added 2
+- Feature color-based image retrieval
 
 ## Acknowledgements
 
 Give credit here.
 
-- This project was inspired by...
-- This project was based on [this tutorial](https://www.example.com).
-- Many thanks to...
+- This project was assigned by Aljabar Linier dan Geometri
+- Many thanks to our lecturer, Pak Rinaldi Munir, M.T.
 
 ## Contact
 
