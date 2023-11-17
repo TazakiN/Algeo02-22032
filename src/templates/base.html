@@ -8,7 +8,6 @@
 
       <link
         rel="shortcut icon"
-        type="image/png"
         href="{% static 'images/favicon.ico' %}"
       />
       <link rel="icon" href="{% static 'images/favicon.ico' %}" />
@@ -41,7 +40,7 @@
       <div>
         <h1 class="title">Content-Based Image Retrieval</h1>
       </div>
-      <div class="subtitle">Penjelasan<a href={% url 'explanation' %}> CBIR</a></div>
+      <div class="subtitle">Penjelasan<a href={% url 'explanation' %}>CBIR</a></div>
       <div class="main-container">
         <div class="image-container">
           {% block image-drop-zone %}{% endblock image-drop-zone %}

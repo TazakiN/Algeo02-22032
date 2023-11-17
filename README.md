@@ -1,4 +1,4 @@
-# Content-Based Image Retrieval
+# Tugas Besar AlGeo 2 || Content-Based Image Retrieval Website
 
 > Sebuah website yang menyediakan fitur pencarian gambar berdasarkan konten gambar.  
 > Live demo [_di sini_](https://algeo02-22032.vercel.app/). <!-- If you have the project hosted somewhere, include the link here. -->
@@ -19,10 +19,10 @@
 
 ## General Information
 
-- Provide general information about your project here.
-- What problem does it (intend to) solve?
-- What is the purpose of your project?
-- Why did you undertake it?
+- Sebuah website yang menyediakan fitur pencarian gambar berdasarkan konten gambar.
+- Website ini dibuat untuk memenuhi tugas besar mata kuliah IF2123 Aljabar Linier dan Geometri, Teknik Informatika ITB, 2023/2024.
+- Website ini dibuat dengan menggunakan bahasa pemrograman Python dan framework Django.
+
 <!-- You don't have to answer all the questions - just the ones relevant to your project. -->
 
 ## Technologies Used
@@ -40,6 +40,8 @@
 
 - Pencarian Gambar (CBIR) berdasarkan warna
 - Pencarian Gambar (CBIR) berdasarkan tekstur
+- input gambar query melalui upload gambar
+- input gambar query melalui kamera
 
 ## Screenshots
 
