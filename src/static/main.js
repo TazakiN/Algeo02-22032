@@ -111,6 +111,99 @@ Dropzone.options.myAwesomeDropzoneDataset = {
   },
 };
 
+// menggunakan cookie untuk mengirim CSRF token
+function getCookie(name) {
+  var cookieValue = null;
+  if (document.cookie && document.cookie !== "") {
+    var cookies = document.cookie.split(";");
+    for (var i = 0; i < cookies.length; i++) {
+      var cookie = cookies[i].trim();
+      if (cookie.substring(0, name.length + 1) === name + "=") {
+        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+        break;
+      }
+    }
+  }
+  return cookieValue;
+}
+
+var isCapturing = false;
+var captureIntervalId;
+
+function startCapture() {
+  var video = document.querySelector("video");
+
+  if (isCapturing) {
+    clearInterval(captureIntervalId);
+    video.srcObject.getTracks().forEach((track) => track.stop());
+    video.style.display = "none";
+    isCapturing = false;
+  } else {
+    navigator.mediaDevices
+      .getUserMedia({ video: true })
+      .then(function (stream) {
+        video.srcObject = stream;
+        video.onloadedmetadata = function (e) {
+          video.play();
+          video.style.display = "block";
+          captureIntervalId = setInterval(function () {
+            var canvas = document.createElement("canvas");
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            canvas
+              .getContext("2d")
+              .drawImage(video, 0, 0, canvas.width, canvas.height);
+            var dataUrl = canvas.toDataURL("image/jpeg");
+            var blob = dataURLToBlob(dataUrl);
+            var formData = new FormData();
+            formData.append("file", blob, "image.jpg");
+            fetch("/upload/", {
+              method: "POST",
+              body: formData,
+              headers: {
+                "X-CSRFToken": getCookie("csrftoken"),
+              },
+            })
+              .then((response) => response.json())
+              .then((result) => {
+                console.log("Success:", result);
+                return fetch("/update_result/", {
+                  method: "GET",
+                  headers: {
+                    "X-CSRFToken": getCookie("csrftoken"),
+                  },
+                });
+              })
+              .then((response) => response.json())
+              .then((result) => {
+                console.log("Update result success:", result);
+                updateImages();
+              })
+              .catch((error) => {
+                console.error("Error:", error);
+              });
+          }, 5000);
+        };
+      })
+      .catch(function (err) {
+        console.log(err.name + ": " + err.message);
+      });
+    isCapturing = true;
+  }
+}
+
+function dataURLToBlob(dataUrl) {
+  var arr = dataUrl.split(","),
+    mime = arr[0].match(/:(.*?);/)[1],
+    bstr = atob(arr[1]),
+    n = bstr.length,
+    u8arr = new Uint8Array(n);
+  while (n--) {
+    u8arr[n] = bstr.charCodeAt(n);
+  }
+  return new Blob([u8arr], { type: mime });
+}
+
 var page = 1; // halaman yang pertama ditampilkan
 
 function updateImages() {

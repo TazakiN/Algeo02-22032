@@ -16,6 +16,7 @@
   </form>
   <div id="imagePreview"></div>
 </div>
+<video id="video" style="display: none" autoplay></video>
 {% endblock %}
 <!-- block cbir-switch tempat switch color dan texture -->
 {% block cbir-switch %}
@@ -52,6 +53,10 @@
     <span class="text">Search</span>
   </button>
 </form>
+
+<button id="snap" onclick="startCapture()" style="--clr: #0ff0fc">
+  <span>Snap Photo</span><i></i>
+</button>
 
 {% endblock %}
 <!-- block upload-dataset tempat upload dataset -->

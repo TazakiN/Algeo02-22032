@@ -7,8 +7,9 @@ from django.core.files.storage import FileSystemStorage
 from django.views.generic import TemplateView
 from django.http import HttpResponse
 from django.core.paginator import Paginator
-from example.models import Image, Dataset
+from example.models import ImageQuery, Dataset
 from example.logic.texture import *
+from example.logic.colors import *
 import urllib.parse
 import logging
 
@@ -54,9 +55,10 @@ def upload(request):
 
             # Panggil fungsi getData untuk mendapatkan data dari gambar yang di-upload
             imageDataTexture = getData(uploaded_image_path)
+            imageDataColor = convert_rgb_hsv(uploaded_image_path)
 
             # Buat instance model Image dan simpan ke database
-            image_model = Image(name=image.name, image=image_url)
+            image_model = ImageQuery(name=image.name, image=image_url)
             image_model.save()
 
             # respon sukses
@@ -81,15 +83,15 @@ def uploadDataset(request):
             uploaded_image_path = os.path.join(settings.MEDIA_ROOT, "dataset", filename)
 
             # Panggil fungsi getData untuk mendapatkan data dari gambar yang di-upload
-            image_data = getData(uploaded_image_path)
+            image_data_texture = getData(uploaded_image_path)
 
             # Buat instance model Dataset dan simpan ke database
             dataset_model = Dataset(
                 name=image.name,
                 image=image_url,
-                contrast=image_data[0],
-                homogeneity=image_data[1],
-                entropy=image_data[2],
+                contrast=image_data_texture[0],
+                homogeneity=image_data_texture[1],
+                entropy=image_data_texture[2],
             )  # Ubah ini
             dataset_model.save()
 

@@ -1,7 +1,7 @@
 # Content-Based Image Retrieval
 
 > Sebuah website yang menyediakan fitur pencarian gambar berdasarkan konten gambar.  
-> Live demo [_di sini_](https://django-hello-world-wheat-mu.vercel.app/). <!-- If you have the project hosted somewhere, include the link here. -->
+> Live demo [_di sini_](https://algeo02-22032.vercel.app/). <!-- If you have the project hosted somewhere, include the link here. -->
 
 ## Table of Contents
 
@@ -43,7 +43,7 @@
 
 ## Screenshots
 
-![Example screenshot](./img/screenshot.png)
+![Main Page](./img/tampilan-utama.png)
 
 <!-- If you have screenshots you'd like to share, include them here. -->
 
@@ -70,6 +70,7 @@ Room for improvement:
 
 - Frontend design
 - bugs in the backend
+- media files bugs in deployment
 
 To do:
 
@@ -79,7 +80,7 @@ To do:
 
 Give credit here.
 
-- This project was assigned by Aljabar Linier dan Geometri
+- This project was assigned in IF2123 Aljabar Linier dan Geometri lecture, Teknik Informatika ITB, 2023/2024
 - Many thanks to our lecturer, Pak Rinaldi Munir, M.T.
 
 ## Contact
