@@ -84,6 +84,7 @@ def uploadDataset(request):
 
             # Panggil fungsi getData untuk mendapatkan data dari gambar yang di-upload
             image_data_texture = getData(uploaded_image_path)
+            image_data_color = convert_rgb_hsv(uploaded_image_path)
 
             # Buat instance model Dataset dan simpan ke database
             dataset_model = Dataset(
@@ -92,7 +93,21 @@ def uploadDataset(request):
                 contrast=image_data_texture[0],
                 homogeneity=image_data_texture[1],
                 entropy=image_data_texture[2],
-            )  # Ubah ini
+                h0=image_data_color[0],
+                h1=image_data_color[1],
+                h2=image_data_color[2],
+                h3=image_data_color[3],
+                h4=image_data_color[4],
+                h5=image_data_color[5],
+                h6=image_data_color[6],
+                h7=image_data_color[7],
+                s0=image_data_color[8],
+                s1=image_data_color[9],
+                s2=image_data_color[10],
+                v0=image_data_color[11],
+                v1=image_data_color[12],
+                v2=image_data_color[13],
+            )
             dataset_model.save()
 
             # Respon sukses
@@ -122,6 +137,7 @@ def methodCBIR(request):
 
 def update_result(request):
     global imageDataTexture
+    global imageDataColor
     global time_taken
     global method
 
@@ -150,6 +166,64 @@ def update_result(request):
 
             # hitung similarity
             similarity = cosine(imageDataTexture, dataset_image_data)
+
+            if similarity > similarity_threshold:
+                similar_images.append(
+                    {
+                        "image_url": "/".join(
+                            [
+                                "media",
+                                "dataset",
+                                os.path.basename(str(dataset_image.image)),
+                            ]
+                        ),
+                        "image_name": urllib.parse.unquote(
+                            os.path.basename(str(dataset_image.image))
+                        ),
+                        "similarity": similarity,
+                    }
+                )
+
+        # sorting berdasarkan similarity
+        similar_images.sort(key=lambda x: x["similarity"], reverse=True)
+    else:
+        for dataset_image in dataset_images:
+            # ambil data dari model Dataset
+            h0 = dataset_image.h0
+            h1 = dataset_image.h1
+            h2 = dataset_image.h2
+            h3 = dataset_image.h3
+            h4 = dataset_image.h4
+            h5 = dataset_image.h5
+            h6 = dataset_image.h6
+            h7 = dataset_image.h7
+            s0 = dataset_image.s0
+            s1 = dataset_image.s1
+            s2 = dataset_image.s2
+            v0 = dataset_image.v0
+            v1 = dataset_image.v1
+            v2 = dataset_image.v2
+
+            # buat list data dari model Dataset
+            dataset_image_data = [
+                h0,
+                h1,
+                h2,
+                h3,
+                h4,
+                h5,
+                h6,
+                h7,
+                s0,
+                s1,
+                s2,
+                v0,
+                v1,
+                v2,
+            ]
+
+            # hitung similarity
+            similarity = cosine(imageDataColor, dataset_image_data)
 
             if similarity > similarity_threshold:
                 similar_images.append(

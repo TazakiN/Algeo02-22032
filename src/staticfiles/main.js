@@ -90,7 +90,7 @@ Dropzone.options.myAwesomeDropzoneDataset = {
         dotCount = (dotCount + 1) % 4;
         var dots = new Array(dotCount + 1).join(".");
         uploadMessage.textContent = "Sedang mengunggah: " + file.name + dots;
-      }, 1000);
+      }, 400);
     });
 
     this.on("complete", function (file) {
@@ -228,7 +228,7 @@ function updateImages() {
             item.image_name +
             '</div> <div class="image-similarity">' +
             item.similarity.toFixed(10) +
-            "% similarity</div> </div>";
+            "%</div> </div>";
         });
 
         $("#result-image").html(html);
