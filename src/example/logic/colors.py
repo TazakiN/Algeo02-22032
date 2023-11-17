@@ -32,7 +32,7 @@ def convert_rgb_hsv(path_gambar):
     delta = v - np.min(matrix_rgb, axis=2)
 
     # Merupakan array s dari seluruh pixel
-    s = np.where(v != 0, delta / v, 0)
+    s = np.where(v != 0, delta / (v + 1e-10), 0)
     
     # Merupakan array h dari seluruh pixel
     h = np.where((delta != 0), 
@@ -91,7 +91,7 @@ def main():
     path_foto = r"C:\Users\ACER\Documents\GitHub\Algeo02-22032\src\example\logic\skulll.jpg"
     hehe = convert_rgb_hsv(path_foto)
 
-    path_fot = r"C:\Users\ACER\Documents\GitHub\Algeo02-22032\src\example\logic\skulll.jpg"
+    path_fot = r"C:\Users\ACER\Documents\GitHub\Algeo02-22032\src\example\logic\maung.jpg"
     heh = convert_rgb_hsv(path_fot)
 
     end = time.time()
@@ -99,5 +99,6 @@ def main():
     similar = cosine(hehe,heh)
     print(similar, "%")
     print("time :" , end-start, "s")
+    
 if __name__ == "__main__":
     main()
