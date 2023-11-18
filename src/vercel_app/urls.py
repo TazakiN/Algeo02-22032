@@ -29,6 +29,7 @@ urlpatterns = [
     path("update_result/", views.update_result, name="update_result"),
     path("about-us/", views.aboutUs, name="about-us"),
     path("explanation/", views.explanation, name="explanation"),
+    path("how-to-use/", views.howToUse, name="how-to-use"),
 ]
 
 if settings.DEBUG:

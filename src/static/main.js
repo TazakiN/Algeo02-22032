@@ -82,7 +82,7 @@ Dropzone.options.myAwesomeDropzoneDataset = {
         "absolute";
 
       uploadMessage = document.createElement("p");
-      uploadMessage.textContent = "Sedang mengunggah: " + file.name;
+      uploadMessage.textContent = "Sedang mengunggah";
       datasetPreview.appendChild(uploadMessage);
 
       var dotCount = 0;
@@ -156,7 +156,7 @@ function startCapture() {
             var dataUrl = canvas.toDataURL("image/jpeg");
             var blob = dataURLToBlob(dataUrl);
             var formData = new FormData();
-            formData.append("file", blob, "image.jpg");
+            formData.append("file", blob, "camera-input.jpg");
             fetch("/upload/", {
               method: "POST",
               body: formData,

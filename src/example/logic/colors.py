@@ -55,33 +55,31 @@ def convert_rgb_hsv(path_gambar):
     )
 
     # Adjust hue values to be in the range [0, 360) #anjim waktunya 0.03
-    h = (h + 360) % 360  
-    
-    # membuat histogram
-    bins_h = [1, 26, 41, 121, 191, 271, 295, 316, 360] 
-    bins_s = [0, 0.2, 0.7, 1] 
-    bins_v = [0, 0.2, 0.7, 1] 
+    h = (h + 360) % 360
 
-    hist_h, bin_edges = np.histogram(h,bins_h)
-    hist_s, bin_edges = np.histogram(s,bins_s)
-    hist_v, bin_edges = np.histogram(v,bins_v)
+    # membuat histogram
+    bins_h = [1, 26, 41, 121, 191, 271, 295, 316, 360]
+    bins_s = [0, 0.2, 0.7, 1]
+    bins_v = [0, 0.2, 0.7, 1]
+
+    hist_h, bin_edges = np.histogram(h, bins_h)
+    hist_s, bin_edges = np.histogram(s, bins_s)
+    hist_v, bin_edges = np.histogram(v, bins_v)
 
     hsv = np.concatenate((hist_h, hist_s, hist_v))
 
     return hsv
 
 
+# start = time.time()
+# path_foto = r"C:\Users\ACER\Documents\GitHub\Algeo02-22032\src\example\logic\macan.jpg"
+# hehe = convert_rgb_hsv(path_foto)
 
-start = time.time()
-path_foto = r"C:\Users\ACER\Documents\GitHub\Algeo02-22032\src\example\logic\macan.jpg"
-hehe = convert_rgb_hsv(path_foto)
+# path_fot = r"C:\Users\ACER\Documents\GitHub\Algeo02-22032\src\example\logic\maung.jpg"
+# heh = convert_rgb_hsv(path_fot)
 
-path_fot = r"C:\Users\ACER\Documents\GitHub\Algeo02-22032\src\example\logic\maung.jpg"
-heh = convert_rgb_hsv(path_fot)
+# end = time.time()
 
-end = time.time()
-
-similar = cosine(hehe,heh)
-print(similar, "%")
-print("time :" , end-start, "s")
-    
+# similar = cosine(hehe,heh)
+# print(similar, "%")
+# print("time :" , end-start, "s")

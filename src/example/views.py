@@ -36,6 +36,10 @@ def explanation(request):
     return render(request, "example/explanation.html")
 
 
+def howToUse(request):
+    return render(request, "example/how-to-use.html")
+
+
 def upload(request):
     global imageDataTexture
     global imageDataColor

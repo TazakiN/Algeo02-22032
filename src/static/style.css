@@ -443,7 +443,11 @@ input:checked + .slider:before {
 }
 
 .subtitle a::before {
-  content: "\00a0"; /* Menambahkan karakter spasi (non-breaking space) sebelum teks */
+  content: "\00a0";
+}
+
+.subtitle a::after {
+  content: "\00a0";
 }
 
 .subtitle a {

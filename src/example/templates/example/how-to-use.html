@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>How to Use</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Explanation of CBIR" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'explanation.css' %}"
+    />
+  </head>
+  <body class="bg">
+    <div class="back-button">
+      <a href="#" onclick="history.back();">&#8592; Back</a>
+    </div>
+
+    <div class="title-container">
+      <h1 class="page-title">How to Use CBIR</h1>
+    </div>
+
+    <img
+      src="{% static 'images/tampilan-utama.png' %}"
+      style="width: 70%; border: 3px white solid; margin-top: 20px"
+    />
+
+    <div class="explanation-container">
+      <div class="explanation-text">
+        <h2>1. Upload gambar dataset</h2>
+        <p>
+          Untuk mengunggah gambar dataset yang akan digunakan, pengguna bisa
+          melakukan drag & drop folder yang berisi gambar-gambar ke bagian
+          upload dataset. Secara otomatis, gambar akan terupload satu per satu
+          ke database. Proses ini membutuhkan waktu yang lumayan lama karena
+          jumlah gambar dataset sudah sewajarnya berjumlah banyak dan gambar
+          juga langsung di ekstrak data warna dan teksturnya untuk kemudian
+          dilakukan perbandingan gambar.
+        </p>
+      </div>
+    </div>
+
+    <div class="explanation-container">
+      <div class="explanation-text">
+        <h2>2. Upload gambar Query</h2>
+        <h3>Melalui upload gambar biasa</h3>
+        <p>
+          Pengguna bisa mengunggah gambar Query dengan melakukan drag & drop ke
+          kotak upload yang berada paling atas. Untuk gambar berdimensi sekitar
+          1100 x 1400 pixel sendiri akan membutuhkan waktu maksimal 4 detik
+          untuk diunggah. Hal ini cukup singkat mengingat gambar yang diunggah
+          langsung diambil data warna dan teksturnya.
+        </p>
+        <h3>Melalui camera pengguna</h3>
+        <p>
+          Pengguna bisa mengunggah gambar Query dengan menggunakan kamera yang
+          dimiliki oleh pengguna. Pengguna cukup menekan tombol “open camera”
+          untuk mengakses kamera. Kamera kemudian akan mengambil gambar setiap 5
+          detik dan langsung menampilkan hasilnya di bagian hasil sesuai dengan
+          metode yang terpilih saat ini.
+        </p>
+      </div>
+    </div>
+
+    <div class="explanation-container">
+      <div class="explanation-text">
+        <h2>3. Pilih Metode CBIR yang ingin digunakan ( Tekstur / Warna )</h2>
+        <p>
+          Pengguna dapat memilih metode untuk melakukan CBIR antara Query dengan
+          gambar di Dataset. Pengguna cukup mengatur “switch” yang terletak pada
+          bagian kanan atas website dan bertuliskan color dan texture. fitur
+          kamera sendiri akan menampilkan gambar sesuai dengan metode CBIR yang
+          sedang dipilih.
+        </p>
+      </div>
+    </div>
+
+    <div class="explanation-container">
+      <div class="explanation-text">
+        <h2>4. Tekan tombol Search</h2>
+        <p>
+          Langkah terakhir adalah menekan tombol Search, setelah tombol Search
+          ditekan, website akan menampilkan 6 gambar pertama yang memiliki
+          similaritas tertinggi. Pengguna bisa melihat gambar-gambar selanjutnya
+          dengan menekan tombol next di bawah gambar-gambar yang tertampil pada
+          bagian result.
+        </p>
+        <p>
+          Pada bagian result juga akan tertulis berapa lama proses pencarian
+          gambar dilakukan dan berapa banyak gambar yang diperoleh.
+        </p>
+      </div>
+    </div>
+
+    <div class="explanation-container">
+      <div class="explanation-text">
+        <h2>Selesai</h2>
+        <p>
+          Setelah hasil CBIR ditampilkan, pengguna masih bisa menggunakan
+          website ini dengan cara mengunggah gambar baru di bagian query dengan
+          cara mengklik di bagian sekitar gambar Query saat ini atau dengan drag
+          & drop gambar query baru ke gambar Query saat ini. Pengguna juga bisa
+          menambahkan dataset tambahan dengan cara yang relatif sama.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

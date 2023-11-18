@@ -20,8 +20,8 @@
 ## General Information
 
 - Sebuah website yang menyediakan fitur pencarian gambar berdasarkan konten gambar.
-- Website ini dibuat untuk memenuhi tugas besar mata kuliah IF2123 Aljabar Linier dan Geometri, Teknik Informatika ITB, 2023/2024.
 - Website ini dibuat dengan menggunakan bahasa pemrograman Python dan framework Django.
+- Website ini dibuat untuk memenuhi tugas besar mata kuliah IF2123 Aljabar Linier dan Geometri, Teknik Informatika ITB, 2023/2024.
 
 <!-- You don't have to answer all the questions - just the ones relevant to your project. -->
 
@@ -46,6 +46,7 @@
 ## Screenshots
 
 ![Main Page](./img/tampilan-utama.png)
+![Testing](./img/test-result-1.png)
 
 <!-- If you have screenshots you'd like to share, include them here. -->
 
