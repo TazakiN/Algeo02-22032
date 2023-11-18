@@ -117,7 +117,13 @@ def getData(path):  # return vektor
 
     kontras = np.sum(data * m_square)
     homo = np.sum(data / (m_square + 1))
-    entro = np.sum(np.where(data > 0, data * np.log10(data + 1e-10), 0))
+    entro = np.sum(np.where(data > 0, data * np.log2(data + 1e-10), 0))
+    energy = np.sum(data**2)
+
+    mean = np.mean(array_index)
+    m_mean = (array_index[:, None] - mean) * (array_index - mean)
+    std = np.std(array_index)
+    correlation = np.sum((data * m_mean) / std**2)
 
     # kontras = contrast(data)
     # homo = homogeneity(data)
@@ -129,13 +135,13 @@ def getData(path):  # return vektor
     #         if (data[i][j] != 0) :
     #             entro += data[i][j] * np.log10(data[i][j])
 
-    vektor = [kontras, homo, -entro]
+    vektor = [kontras, homo, -entro, energy, correlation]
     return vektor
 
 
 # start = time.time()
-# kucingpaw = getData("0.jpg")
-# kucingchill = getData("1.jpg")
+# kucingpaw = getData("kucingchillin.jpeg")
+# kucingchill = getData("kucingpaw.png")
 # similarity = cosine(kucingpaw, kucingchill)
 # end = time.time()
 
