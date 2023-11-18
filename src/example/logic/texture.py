@@ -1,6 +1,5 @@
 from PIL import Image
 import numpy as np
-import time
 
 # def ImagetoRGB (path) : # input merupakan alamat atau path dari image
 #     image = Image.open(path)
@@ -137,14 +136,3 @@ def getData (path) : # return vektor
 
     vektor = [kontras, homo, -entro, energy, correlation]
     return vektor
-
-# start = time.time()
-# kucingpaw = getData("0.jpg")
-# kucingchill = getData("1.jpg")
-# similarity = cosine(kucingpaw, kucingchill)
-# end = time.time()
-
-# print("kontras:" , kucingpaw[0] , "Homo:", kucingpaw[1], "entro:" , kucingpaw[2])
-# print("kontras:" , kucingchill[0] , "Homo:", kucingchill[1], "entro:" , kucingchill[2])
-# print(similarity, "%")
-# print("time:", (end - start) * 1000 , "ms")
