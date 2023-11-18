@@ -1,7 +1,7 @@
 # Tugas Besar AlGeo 2 || Content-Based Image Retrieval Website
 
 > Sebuah website yang menyediakan fitur pencarian gambar berdasarkan konten gambar.  
-> Live demo [_di sini_](https://algeo02-22032.vercel.app/). <!-- If you have the project hosted somewhere, include the link here. -->
+> Live demo [_di sini_](https://algeo02-22032.vercel.app/)
 
 ## Table of Contents
 
@@ -23,8 +23,6 @@
 - Website ini dibuat dengan menggunakan bahasa pemrograman Python dan framework Django.
 - Website ini dibuat untuk memenuhi tugas besar mata kuliah IF2123 Aljabar Linier dan Geometri, Teknik Informatika ITB, 2023/2024.
 
-<!-- You don't have to answer all the questions - just the ones relevant to your project. -->
-
 ## Technologies Used
 
 - Python - version 3.12
@@ -45,46 +43,43 @@
 
 ## Screenshots
 
+Tampilan Utama
 ![Main Page](./img/tampilan-utama.png)
+
+Contoh Hasil Pencarian
 ![Testing](./img/test-result-1.png)
 
 <!-- If you have screenshots you'd like to share, include them here. -->
 
 ## Setup
 
-What are the project requirements/dependencies? Where are they listed? A requirements.txt or a Pipfile.lock file perhaps? Where is it located?
+Setiap dependencies yang dibutuhkan sudah terdapat di requirements.txt.
 
-Proceed to describe how to install / setup one's local environment / get started with the project.
+Untuk menjalankan website ini, lakukan langkah-langkah berikut:
 
-## Usage
-
-How does one go about using it?
-Provide various use cases and code examples here.
-
-`write-your-code-here`
+- Clone repository ini.
+- akses terminal dari folder src dengan mengetikkan `cd src` di terminal.
+- Lakukan install dependencies dengan menjalankan perintah `pip install -r requirements.txt` di terminal.
+- Jalankan perintah `python manage.py runserver` di terminal.
+- Buka http://127.0.0.1:8000/ di browser.
 
 ## Project Status
 
-Project is: _in progress_
+Project is: _completed_
 
 ## Room for Improvement
 
 Room for improvement:
 
 - Frontend design
-- bugs in the backend
 - media files bugs in deployment
 
 To do:
 
-- Feature color-based image retrieval
-
 ## Acknowledgements
 
-Give credit here.
-
-- This project was assigned in IF2123 Aljabar Linier dan Geometri lecture, Teknik Informatika ITB, 2023/2024
-- Many thanks to our lecturer, Pak Rinaldi Munir, M.T.
+- projek ini ditugaskan pada mata kuliah IF2123 Aljabar Linier dan Geometri, Teknik Informatika ITB, 2023/2024
+- Terima kasih sebesar-besarnya kepada dosen kami, Pak Rinaldi Munir, M.T.
 
 ## Contact
 
@@ -93,9 +88,3 @@ Created by dizkon
 - 13522032 [@Tazkia Nizami](https://github.com/TazakiN)
 - 13522040 [@Dhidit Abdi Aziz](https://github.com/dhiabziz)
 - 13522049 [@Vanson Kurnialim](https://github.com/VansonK)
-
-<!-- Optional -->
-<!-- ## License -->
-<!-- This project is open source and available under the [... License](). -->
-
-<!-- You don't have to include all sections - just the one's relevant to your project -->
