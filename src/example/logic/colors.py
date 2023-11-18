@@ -42,63 +42,32 @@ def convert_rgb_hsv(path_gambar):
                   
     # Adjust hue values to be in the range [0, 360) #anjim waktunya 0.03
     h = (h + 360) % 360  
-
-    # Stack H, S, V to get the HSV image
-    # hsv_image = np.stack((h, s, v), axis=-1)
-    
-    # Merupakan array untuk menyimpan histogram hsv yang kemudian dicosine
-    hsv = np.zeros(14)
     
     # membuat histogram
-    for i in range(len(h)):
-        for j in range (len(h[i])):
-            if (h[i][j] >= 316) and (h[i][j] <= 360):
-                hsv[0] += 1
-            elif (h[i][j] >= 1) and (h[i][j] <= 25):
-                hsv[1] += 1
-            elif (h[i][j] >= 26) and (h[i][j] <= 40):
-                hsv[2] += 1
-            elif (h[i][j] >= 41) and (h[i][j] <= 120):
-                hsv[3] += 1
-            elif (h[i][j] >= 121) and (h[i][j] <= 190):
-                hsv[4] += 1
-            elif (h[i][j] >= 191) and (h[i][j] <= 270):
-                hsv[5] += 1
-            elif (h[i][j] >= 271) and (h[i][j] <= 295):
-                hsv[6] += 1
-            elif (h[i][j] >= 295) and (h[i][j] <= 315):
-                hsv[7] += 1
+    bins_h = [1, 26, 41, 121, 191, 271, 295, 316, 360] 
+    bins_s = [0, 0.2, 0.7, 1] 
+    bins_v = [0, 0.2, 0.7, 1] 
 
-            if (s[i][j] >= 0) and (s[i][j] < 0.2):
-                hsv[8] += 1
-            elif (s[i][j] >= 0.2) and (s[i][j] < 0.7):
-                hsv[9] += 1
-            elif (s[i][j] >= 0.7) and (s[i][j] <= 1):
-                hsv[10] += 1
+    hist_h, bin_edges = np.histogram(h,bins_h)
+    hist_s, bin_edges = np.histogram(s,bins_s)
+    hist_v, bin_edges = np.histogram(v,bins_v)
 
-            if (v[i][j] >= 0) and (v[i][j] < 0.2):
-                hsv[11] += 1
-            elif (v[i][j]  >= 0.2) and (v[i][j]  < 0.7):
-                hsv[12] += 1
-            elif (v[i][j]  >= 0.7) and (v[i][j]  <= 1):
-                hsv[13] += 1
+    hsv = np.concatenate((hist_h, hist_s, hist_v))
 
     return hsv
             
 
-def main():
-    start = time.time()
-    path_foto = r"C:\Users\ACER\Documents\GitHub\Algeo02-22032\src\example\logic\skulll.jpg"
-    hehe = convert_rgb_hsv(path_foto)
 
-    path_fot = r"C:\Users\ACER\Documents\GitHub\Algeo02-22032\src\example\logic\maung.jpg"
-    heh = convert_rgb_hsv(path_fot)
+start = time.time()
+path_foto = r"C:\Users\ACER\Documents\GitHub\Algeo02-22032\src\example\logic\macan.jpg"
+hehe = convert_rgb_hsv(path_foto)
 
-    end = time.time()
+path_fot = r"C:\Users\ACER\Documents\GitHub\Algeo02-22032\src\example\logic\maung.jpg"
+heh = convert_rgb_hsv(path_fot)
 
-    similar = cosine(hehe,heh)
-    print(similar, "%")
-    print("time :" , end-start, "s")
+end = time.time()
+
+similar = cosine(hehe,heh)
+print(similar, "%")
+print("time :" , end-start, "s")
     
-if __name__ == "__main__":
-    main()
