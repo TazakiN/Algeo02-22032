@@ -16,6 +16,8 @@ class Dataset(models.Model):
     contrast = models.FloatField(default=0.0)
     homogeneity = models.FloatField(default=0.0)
     entropy = models.FloatField(default=0.0)
+    energy = models.FloatField(default=0.0)
+    correlation = models.FloatField(default=0.0)
     # data color
     h0 = models.IntegerField(default=0)
     h1 = models.IntegerField(default=0)

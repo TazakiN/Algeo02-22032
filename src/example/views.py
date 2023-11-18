@@ -93,6 +93,8 @@ def uploadDataset(request):
                 contrast=image_data_texture[0],
                 homogeneity=image_data_texture[1],
                 entropy=image_data_texture[2],
+                energy=image_data_texture[3],
+                correlation=image_data_texture[4],
                 h0=image_data_color[0],
                 h1=image_data_color[1],
                 h2=image_data_color[2],
@@ -160,9 +162,11 @@ def update_result(request):
             contrast = dataset_image.contrast
             homogeneity = dataset_image.homogeneity
             entropy = dataset_image.entropy
+            energy = dataset_image.energy
+            correlation = dataset_image.correlation
 
             # buat list data dari model Dataset
-            dataset_image_data = [contrast, homogeneity, entropy]
+            dataset_image_data = [contrast, homogeneity, entropy, energy, correlation]
 
             # hitung similarity
             similarity = cosine(imageDataTexture, dataset_image_data)
