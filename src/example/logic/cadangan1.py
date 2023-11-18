@@ -19,13 +19,8 @@ def convert_rgb_hsv(path_gambar):
     # Ganti path_gambar dengan path foto yang ingin Anda ubah
 
     matrix_rgb = ImagetoRGB(path_gambar)
-    hsv = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-    # v = np.max(rgb_normalized, axis=2)
-    # h = np.where(
-    #     (v == r), 60 * ((g - b) / delta % 6),
-    #     np.where((v == g), 60 * ((b - r) / delta + 2),
-    #              60 * ((r - g) / delta + 4)))
-    matrix_rgb = matrix_rgb/255.0
+    # hsv = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    # matrix_rgb = matrix_rgb/255.0
     
     # for i in range(len(matrix_rgb)):    
     #     for j in range(len(matrix_rgb[i])):
