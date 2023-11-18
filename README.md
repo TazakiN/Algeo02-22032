@@ -74,11 +74,9 @@ Room for improvement:
 - Frontend design
 - media files bugs in deployment
 
-To do:
-
 ## Acknowledgements
 
-- projek ini ditugaskan pada mata kuliah IF2123 Aljabar Linier dan Geometri, Teknik Informatika ITB, 2023/2024
+- Projek ini ditugaskan pada mata kuliah IF2123 Aljabar Linier dan Geometri, Teknik Informatika ITB, 2023/2024
 - Terima kasih sebesar-besarnya kepada dosen kami, Pak Rinaldi Munir, M.T.
 
 ## Contact
