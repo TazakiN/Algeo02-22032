@@ -1,4 +1,4 @@
-# Tugas Besar AlGeo 2 || Content-Based Image Retrieval Website
+# Content-Based Image Retrieval Website
 
 > Sebuah website yang menyediakan fitur pencarian gambar berdasarkan konten gambar.  
 > Live demo [_di sini_](https://algeo02-22032.vercel.app/)
@@ -40,14 +40,18 @@
 - Pencarian Gambar (CBIR) berdasarkan tekstur
 - input gambar query melalui upload gambar
 - input gambar query melalui kamera
+- input gambar dataset melalui upload gambar
 
 ## Screenshots
 
 Tampilan Utama
 ![Main Page](./img/tampilan-utama.png)
 
+Contoh Menambahkan Query
+![Query Testing](./img/test-query-1.png)
+
 Contoh Hasil Pencarian
-![Testing](./img/test-result-1.png)
+![Result Testing](./img/test-result-1.png)
 
 <!-- If you have screenshots you'd like to share, include them here. -->
 
@@ -58,7 +62,7 @@ Setiap dependencies yang dibutuhkan sudah terdapat di requirements.txt.
 Untuk menjalankan website ini, lakukan langkah-langkah berikut:
 
 - Clone repository ini.
-- akses terminal dari folder src dengan mengetikkan `cd src` di terminal.
+- akses terminal dari folder src.
 - Lakukan install dependencies dengan menjalankan perintah `pip install -r requirements.txt` di terminal.
 - Jalankan perintah `python manage.py runserver` di terminal.
 - Buka http://127.0.0.1:8000/ di browser.
