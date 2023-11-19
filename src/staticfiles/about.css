@@ -23,12 +23,17 @@ body {
   background-attachment: fixed;
 }
 
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
 .person-container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: 20px;
+  margin: 40px;
   padding: 20px;
   background-color: #fff;
   border-radius: 8px;
