@@ -2,8 +2,7 @@
 *.log
 *.pyc
 __pycache__
-db.sqlite3
-media
+src/media
 
 # Environments 
 .env 
@@ -16,3 +15,4 @@ venv.bak/
 
 .vscode
 .prettierignore
+src/dabase.sqlite3
