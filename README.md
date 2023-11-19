@@ -73,19 +73,20 @@ Project is: _completed_
 
 ## Room for Improvement
 
-Room for improvement:
-
-- Frontend design
-- media files bugs in deployment
+- Frontend design.
+- media files bugs in deployment.
+- keakuratan metode tekstur.
 
 ## Acknowledgements
 
-- Projek ini ditugaskan pada mata kuliah IF2123 Aljabar Linier dan Geometri, Teknik Informatika ITB, 2023/2024
+- Projek ini ditugaskan pada mata kuliah IF2123 Aljabar Linier dan Geometri, Teknik Informatika ITB, 2023/2024.
+- Terima kasih kepada Allah SWT atas segala karunia-Nya.
 - Terima kasih sebesar-besarnya kepada dosen kami, Pak Rinaldi Munir, M.T.
+- Terima kasih untuk Tazki, Dhidit, dan Vanson sudah menyelesaikan projek ini dan berkolaborasi dengan baik.
 
 ## Contact
 
-Created by dizkon
+Dibuat oleh dizkon
 
 - 13522032 [@Tazkia Nizami](https://github.com/TazakiN)
 - 13522040 [@Dhidit Abdi Aziz](https://github.com/dhiabziz)
